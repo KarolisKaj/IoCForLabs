@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * Created by Kay on 4/10/2017.
  */
 @Component
-@Scope("non-singleton")
+@Scope("singleton")
 public class Service implements IService {
 @Autowired
     public Service(@Qualifier("PrimeLogger") ILogger logger){
