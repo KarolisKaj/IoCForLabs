@@ -1,5 +1,6 @@
 package MainThing;
 
+import MainThing.Dependencies.Calendar;
 import MainThing.Dependencies.ILogger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,13 +16,17 @@ public class Bootstrapper {
     AnnotationConfigApplicationContext ctx;
     public void Compose()
     {
+        // BeanFactory atitikmuo
         ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        String[] jk = ctx.getBeanDefinitionNames();
-
-        for (int i = 0; i < jk.length; i++){
-            System.out.println(jk[i]);
+        ctx.register(Calendar.class);
+        String[] exportNames = ctx.getBeanDefinitionNames();
+        System.out.println("//------CONTAINER CONTENT-------------");
+        for (int i = 0; i < exportNames.length; i++){
+            System.out.println(exportNames[i]);
         }
+        System.out.println("//------CONTAINER CONTENT END---------");
+
     }
 
     public void Start()

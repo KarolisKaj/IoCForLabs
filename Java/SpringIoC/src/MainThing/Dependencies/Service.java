@@ -3,6 +3,7 @@ package MainThing.Dependencies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("singleton")
 public class Service implements IService {
-@Autowired
-    public Service(@Qualifier("PrimeLogger") ILogger logger){
-    System.out.println("Service created. Logger injected.");
-}
+    @Autowired
+    public Service(@Qualifier("PrimeLogger") ILogger logger, ICalendar calendar){
+        System.out.println("Service created. Logger injected.");
+        if(calendar != null)
+            System.out.println(calendar.toString()+" was injected successfully!");
+    }
 }

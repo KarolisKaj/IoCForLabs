@@ -1,10 +1,12 @@
 package MainThing;
 
+import MainThing.Dependencies.ICalendar;
 import MainThing.Dependencies.ILogger;
 import MainThing.Dependencies.IService;
 import MainThing.Dependencies.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -13,17 +15,19 @@ import org.springframework.stereotype.Component;
  * Created by Kay on 4/10/2017.
  */
 
-@Configuration
 @Component
 @Scope("singleton")
 public class Consumer
 {
     @Autowired
-    public Consumer(@Qualifier("SecondaryLogger") ILogger logger)
+    public Consumer(@Qualifier("SecondaryLogger") ILogger logger, ICalendar calendar)
     {
         if(logger != null)
             System.out.println("Logger was injected successfully!");
+        if(calendar != null)
+            System.out.println(calendar.toString()+" was injected successfully!");
     }
+
 
     @Autowired
     private IService _service;

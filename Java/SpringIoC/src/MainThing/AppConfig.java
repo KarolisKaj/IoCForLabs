@@ -1,7 +1,8 @@
 package MainThing;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import MainThing.Dependencies.IService;
+import MainThing.Dependencies.ServiceSecondary;
+import org.springframework.context.annotation.*;
 
 /**
  * Created by Kay on 4/9/2017.
@@ -10,4 +11,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(value = "MainThing")
 public class AppConfig {
+
+    @Bean
+    @Primary
+    @Scope("prototype")
+    public IService serviceSecondary(){
+        System.out.println("Bean Service created!");
+        return new ServiceSecondary();
+    }
 }
