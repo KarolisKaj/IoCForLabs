@@ -1,7 +1,9 @@
 package MainThing;
 
+import MainThing.Dependencies.ILogger;
 import MainThing.Dependencies.IService;
 import MainThing.Dependencies.ServiceSecondary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 
 /**
@@ -19,4 +21,5 @@ public class AppConfig {
         System.out.println("Bean Service created!");
         return new ServiceSecondary();
     }
+
 }

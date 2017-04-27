@@ -9,7 +9,6 @@ import java.util.UUID;
  * Created by Kay on 4/11/2017.
  */
 @Component
-@Scope("prototype")
 public class Calendar implements ICalendar {
     private UUID _uuid;
     public Calendar()
