@@ -3,21 +3,21 @@ package MainThing.Dependencies;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.naming.Name;
 import java.util.UUID;
 
 /**
  * Created by Kay on 4/11/2017.
  */
-@Component
 public class Calendar implements ICalendar {
-    private UUID _uuid;
-    public Calendar()
+    private String _name;
+    public Calendar(String name)
     {
-        _uuid = UUID.randomUUID();
+        _name = name;
         System.out.println("Created " + toString());
     }
     @Override
     public String toString() {
-        return  "Calendar " + _uuid.toString();
+        return  "Calendar " + _name;
     }
 }

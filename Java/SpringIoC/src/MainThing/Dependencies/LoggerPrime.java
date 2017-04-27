@@ -11,13 +11,8 @@ import org.springframework.stereotype.Component;
  */
 
 
-@Component
-@Qualifier("PrimeLogger")
-@Primary
-@Scope("singleton")
 public class LoggerPrime implements ILogger, DisposableBean {
 
-    @Autowired
     public LoggerPrime()
     {
         System.out.println("LoggerPrime was created!");

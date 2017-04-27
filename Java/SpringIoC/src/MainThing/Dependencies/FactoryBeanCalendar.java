@@ -5,11 +5,13 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.core.ResolvableType;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Kay on 4/21/2017.
  */
 
+@Component
 public class FactoryBeanCalendar implements FactoryBean<ICalendar> {
 
     private String _type = "Chinese";
@@ -19,7 +21,7 @@ public class FactoryBeanCalendar implements FactoryBean<ICalendar> {
 
     @Override
     public ICalendar getObject() throws Exception {
-        return new Calendar();
+        return new Calendar(_type);
     }
 
     @Override
