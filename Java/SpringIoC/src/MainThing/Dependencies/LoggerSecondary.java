@@ -7,9 +7,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Kay on 4/10/2017.
  */
-@Component
-@Qualifier("SecondaryLogger")
-@Scope("singleton")
 public class LoggerSecondary implements ILogger {
 
     public LoggerSecondary()

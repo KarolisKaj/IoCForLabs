@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Create singleton, primary for autowiring. Pre-post methods-->
+    <bean id="GeneralShop" class="XmlConfiguration.Concrete.GeneralShop" lazy-init="true" scope="singleton" primary="true"
+          init-method="postCreation" destroy-method="preDispose"/>
+
+        <bean id="WardrobeWebShop" class="XmlConfiguration.Concrete.WardrobeWebShop">
+            <!--Inject ctor-->
+            <constructor-arg ref="GroceriesShop"/>
+            <!--Assign Setter-->
+            <property name="otherShopService" ref="GeneralShop"/>
+        </bean>
+        <!--Create prototype, dependency WardrobeWebShopShop ctor. Created via factory method-->
+        <bean id="GroceriesShop" class="XmlConfiguration.Concrete.GroceriesShop" factory-method="createInstance" scope="prototype"/>
+
+    <!--Lookup method provider-->
+    <bean id="ShopCreator" class="XmlConfiguration.Concrete.ShopCreator" scope="prototype"/>
+
+    <!--Lookup method consumer-->
+    <bean id="CarWebShop" class="XmlConfiguration.Concrete.CarWebShop" init-method="process">
+        <lookup-method name="createService" />
+    </bean>
+
+
+
+
+</beans>
+
+
