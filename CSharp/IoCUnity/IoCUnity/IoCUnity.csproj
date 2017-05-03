@@ -67,6 +67,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoCAttributes\IoCAttributes.csproj">
+      <Project>{b92e88a2-967c-4283-9c7f-e408f91595b2}</Project>
+      <Name>IoCAttributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoCConfig\IoCConfig.csproj">
+      <Project>{c0105ce1-c382-4c3d-ad15-839344f17f42}</Project>
+      <Name>IoCConfig</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
