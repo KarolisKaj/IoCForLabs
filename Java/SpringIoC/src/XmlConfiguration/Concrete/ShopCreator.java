@@ -7,6 +7,7 @@ import XmlConfiguration.Interfaces.IShopService;
  */
 public class ShopCreator{
     public IShopService createService(){
-        return  (IShopService)new GeneralShop();
+        System.out.println("Lookup hit");
+        return new GeneralShop();
     }
 }
