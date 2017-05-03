@@ -1,1 +1,0 @@
-C:\Users\Karolis\Source\Repos\IoCForLabs\CSharp\IoCUnity\IoCUnity\bin\Debug\IoCUnity.exe.config
