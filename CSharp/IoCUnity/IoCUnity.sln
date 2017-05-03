@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCUnity", "IoCUnity\IoCUnity.csproj", "{425616D8-068E-4955-BC5C-6E8FBAE703EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCAttributes", "IoCAttributes\IoCAttributes.csproj", "{B92E88A2-967C-4283-9C7F-E408F91595B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCConfig", "IoCConfig\IoCConfig.csproj", "{C0105CE1-C382-4C3D-AD15-839344F17F42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{425616D8-068E-4955-BC5C-6E8FBAE703EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{425616D8-068E-4955-BC5C-6E8FBAE703EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{425616D8-068E-4955-BC5C-6E8FBAE703EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B92E88A2-967C-4283-9C7F-E408F91595B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B92E88A2-967C-4283-9C7F-E408F91595B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B92E88A2-967C-4283-9C7F-E408F91595B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B92E88A2-967C-4283-9C7F-E408F91595B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0105CE1-C382-4C3D-AD15-839344F17F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0105CE1-C382-4C3D-AD15-839344F17F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0105CE1-C382-4C3D-AD15-839344F17F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0105CE1-C382-4C3D-AD15-839344F17F42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
