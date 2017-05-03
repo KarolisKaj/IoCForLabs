@@ -1,1 +1,0 @@
-C:\Users\Karolis\Source\Repos\IoCForLabs\CSharp\IoCForLabs\IoCForLabs\bin\Debug\IoCForLabs.exe.config
