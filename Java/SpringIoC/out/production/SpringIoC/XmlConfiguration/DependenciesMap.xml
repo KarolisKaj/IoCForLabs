@@ -21,7 +21,10 @@
     <bean id="ShopCreator" class="XmlConfiguration.Concrete.ShopCreator" scope="prototype"/>
 
     <!--Lookup method consumer-->
-    <bean id="CarWebShop" class="XmlConfiguration.Concrete.CarWebShop" init-method="process">
+    <bean id="CarWebShop" class="XmlConfiguration.Concrete.CarWebShop" autowire="constructor"/>
+
+    <!--Lookup method consumer-->
+    <bean id="LaunchService" class="XmlConfiguration.Concrete.LaunchService" primary="true">
         <lookup-method name="createService" />
     </bean>
 
