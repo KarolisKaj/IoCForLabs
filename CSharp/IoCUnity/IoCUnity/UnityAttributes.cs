@@ -14,7 +14,7 @@
             container.RegisterTypes(
                 AllClasses.FromAssemblies(Assembly.LoadFrom(@"IoCAttributes.dll")),
                 WithMappings.FromAllInterfaces,
-                getLifetimeManager: (type) => WithLifetime.ContainerControlled(type.ty));
+                getLifetimeManager: (type) => WithLifetime.ContainerControlled(type));
 
             container.Registrations.Print();
             Console.Read();
