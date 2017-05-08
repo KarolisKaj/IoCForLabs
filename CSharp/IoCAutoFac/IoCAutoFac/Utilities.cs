@@ -1,10 +1,5 @@
 ﻿using Autofac;
-using Autofac.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IoCAutoFac
 {
@@ -14,10 +9,12 @@ namespace IoCAutoFac
         {
 
             Console.WriteLine("////////CONTAINER PARTS///////////");
+            Console.WriteLine();
             foreach (var registration in container.ComponentRegistry.Registrations)
             {
-                Console.WriteLine($"{String.Join(",", registration.Services)},  {registration.Target.Activator}, {registration.Id}");
+                Console.WriteLine($"{String.Join(", ", registration.Services)},  {registration.Target.Activator}");
             }
+            Console.WriteLine();
             Console.WriteLine("////////CONTAINER PARTS///////////");
         }
     }

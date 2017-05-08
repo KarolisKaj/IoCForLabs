@@ -9,17 +9,7 @@ namespace IoCAutoFac
     {
         public void Compose()
         {
-            var builder = new ContainerBuilder();
-            // Request Scope
-            builder.RegisterType<PrimaryService>().As<IService>().InstancePerRequest();
-            builder.RegisterType<SecondaryService>().As<IService>().InstancePerLifetimeScope();
 
-
-            var container = builder.Build();
-
-            container.Print();
-
-            Console.ReadLine();
         }
     }
 }
