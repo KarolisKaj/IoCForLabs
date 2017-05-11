@@ -1,9 +1,4 @@
-﻿using Autofac;
-using IoCAutoFacAttributes.Dependencies;
-using IoCAutoFacAttributes.Interfaces;
-using System;
-
-namespace IoCAutoFac
+﻿namespace IoCAutoFac
 {
     public class AutoFacConfig
     {

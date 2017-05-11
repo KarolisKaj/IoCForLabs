@@ -1,6 +1,8 @@
 ﻿namespace IoCAutoFac
 {
     using Autofac;
+    using Autofac.Core;
+    using Autofac.Features.Metadata;
     using IoCAutoFacAttributes.Dependencies;
     using IoCAutoFacAttributes.Interfaces;
     using System;
@@ -33,12 +35,11 @@
             builder.RegisterType<GenericCalendar>().As<ICalendar>().InstancePerDependency().AutoActivate();
 
             // Autowire selected property
-            builder.Register<CalendarFactory>((ctx, args) =>
-                 {
-                     return new CalendarFactory(ctx.ComponentRegistry.Registrations.Where(x => x.Services.Any(y => y.GetType() == typeof(IService)))
-                         .Where(x => { return x.Metadata != null; })
-                         .OrderBy(x => x.Metadata) as IService);
-                 })
+            builder.RegisterType<CalendarFactory>()
+                .WithParameter(
+                new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == typeof(IService),
+                (pi, ctx) => ctx.Resolve<IEnumerable<Meta<int>>>().Max(x => x.Metadata["Priority"])))
                 .AsImplementedInterfaces()
                 .SingleInstance()
                 .PropertiesAutowired((propInfo, o) => propInfo.GetType() == typeof(IService))
