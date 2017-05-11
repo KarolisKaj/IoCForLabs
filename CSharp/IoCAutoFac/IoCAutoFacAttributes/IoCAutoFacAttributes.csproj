@@ -46,8 +46,13 @@
     <Compile Include="Dependencies\CalendarFactory.cs" />
     <Compile Include="Dependencies\EuropeanCalendar.cs" />
     <Compile Include="Dependencies\GenericCalendar.cs" />
+    <Compile Include="Dependencies\PriceService.cs" />
     <Compile Include="Dependencies\PrimaryService.cs" />
     <Compile Include="Dependencies\SecondaryService.cs" />
+    <Compile Include="Dependencies\ServiceFactory.cs" />
+    <Compile Include="Dependencies\StaticCalendar.cs" />
+    <Compile Include="Dependencies\UKCalendar.cs" />
+    <Compile Include="Interfaces\AbstractFactory.cs" />
     <Compile Include="Interfaces\ICalendar.cs" />
     <Compile Include="Interfaces\ICalendarFactory.cs" />
     <Compile Include="Interfaces\ICreationInterceptor.cs" />

@@ -45,6 +45,27 @@
                 .PropertiesAutowired((propInfo, o) => propInfo.GetType() == typeof(IService))
                 .AutoActivate();
 
+            // Sorry DRY Autowire from different dependency. Than above
+            builder.RegisterType<CalendarFactory>()
+                .WithParameter(
+                new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == typeof(IService),
+                (pi, ctx) => ctx.Resolve<IEnumerable<Meta<int>>>().Min(x => x.Metadata["Priority"])))
+                .AsImplementedInterfaces()
+                .SingleInstance()
+                .PropertiesAutowired((propInfo, o) => propInfo.GetType() == typeof(IService))
+                .AutoActivate();
+
+            // Primary factory creation
+            builder.RegisterType<ServiceFactory>()
+                .Named<ServiceFactory>("PrimaryServiceFactory")
+                .AutoActivate();
+
+            builder.Register<IService>(x => x.Resolve<IService>()).AutoActivate();
+
+            // Static method
+            builder.Register<ICalendar>(x => StaticCalendar.CreateInstance()).AutoActivate();
+
             Container = builder.Build();
 
             Container.Print();

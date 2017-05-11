@@ -15,6 +15,6 @@ namespace IoCAutoFacAttributes.Dependencies
             DefaultService = null;
         }
 
-        public ICalendar GetCalendar() => DefaultService == null ? (ICalendar)new EuropeanCalendar() : (ICalendar)new GenericCalendar();
+        public ICalendar GetCalendar() => DefaultService == null ? (ICalendar)new UKCalendar() : (ICalendar)new GenericCalendar();
     }
 }
