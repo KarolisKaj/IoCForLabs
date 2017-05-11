@@ -50,6 +50,7 @@
     <Compile Include="Dependencies\SecondaryService.cs" />
     <Compile Include="Interfaces\ICalendar.cs" />
     <Compile Include="Interfaces\ICalendarFactory.cs" />
+    <Compile Include="Interfaces\ICreationInterceptor.cs" />
     <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
