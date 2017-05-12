@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCAutoFac", "IoCAutoFac\IoCAutoFac.csproj", "{455BE35F-4E6F-49C6-9FDF-71E006686ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCAutoFacConfig", "IoCAutoFacConfig\IoCAutoFacConfig.csproj", "{8E1F6EBD-223F-411C-A295-B349470A3A6B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCAutoFacAttributes", "IoCAutoFacAttributes\IoCAutoFacAttributes.csproj", "{8A745335-0CAC-4D0C-90F0-08D2DCF02BA1}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{455BE35F-4E6F-49C6-9FDF-71E006686ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{455BE35F-4E6F-49C6-9FDF-71E006686ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{455BE35F-4E6F-49C6-9FDF-71E006686ACA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E1F6EBD-223F-411C-A295-B349470A3A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E1F6EBD-223F-411C-A295-B349470A3A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E1F6EBD-223F-411C-A295-B349470A3A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E1F6EBD-223F-411C-A295-B349470A3A6B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A745335-0CAC-4D0C-90F0-08D2DCF02BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A745335-0CAC-4D0C-90F0-08D2DCF02BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A745335-0CAC-4D0C-90F0-08D2DCF02BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
