@@ -31,7 +31,11 @@
                 .OnActivated(e => (e.Instance as ICreationInterceptor)?.Execute())
                  .WithMetadata<PriorityMeta>((a) => a.For((arg) => arg.Priority, 5000));
 
-            builder.RegisterType<EuropeanCalendar>().As<ICalendar>().InstancePerDependency().AutoActivate();
+            // Primary factory creation
+            builder.RegisterType<ServiceFactory>()
+                .AutoActivate();
+
+            builder.RegisterType<EuropeanCalendar>().As<ICalendar>().InstancePerDependency();
             builder.RegisterType<GenericCalendar>().As<ICalendar>().InstancePerDependency().AutoActivate();
 
             // Autowire selected property
@@ -56,12 +60,6 @@
                 .PropertiesAutowired((propInfo, o) => propInfo.GetType() == typeof(IService))
                 .AutoActivate();
 
-            // Primary factory creation
-            builder.RegisterType<ServiceFactory>()
-                .Named<ServiceFactory>("PrimaryServiceFactory")
-                .AutoActivate();
-
-            builder.Register<IService>(x => x.Resolve<IService>()).AutoActivate();
 
             // Static method
             builder.Register<ICalendar>(x => StaticCalendar.CreateInstance()).AutoActivate();
