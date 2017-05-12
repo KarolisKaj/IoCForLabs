@@ -32,10 +32,9 @@
                  .WithMetadata<PriorityMeta>((a) => a.For((arg) => arg.Priority, 5000));
 
             // Primary factory creation
-            builder.RegisterType<ServiceFactory>()
-                .AutoActivate();
+            builder.RegisterType<ServiceFactory>().AsSelf().AutoActivate();
 
-            builder.RegisterType<EuropeanCalendar>().As<ICalendar>().InstancePerDependency();
+            builder.RegisterType<EuropeanCalendar>().As<ICalendar>().AutoActivate();
             builder.RegisterType<GenericCalendar>().As<ICalendar>().InstancePerDependency().AutoActivate();
 
             // Autowire selected property
