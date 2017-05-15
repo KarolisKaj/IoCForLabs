@@ -37,6 +37,8 @@
             builder.RegisterType<EuropeanCalendar>().As<ICalendar>().AutoActivate();
             builder.RegisterType<GenericCalendar>().As<ICalendar>().InstancePerDependency().AutoActivate();
 
+            builder.RegisterType<ThirdService>().As<IService>().InstancePerDependency().AutoActivate();
+
             // Autowire selected property
             builder.RegisterType<CalendarFactory>()
                 .WithParameter(

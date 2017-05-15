@@ -51,6 +51,7 @@
     <Compile Include="Dependencies\SecondaryService.cs" />
     <Compile Include="Dependencies\ServiceFactory.cs" />
     <Compile Include="Dependencies\StaticCalendar.cs" />
+    <Compile Include="Dependencies\ThirdService.cs" />
     <Compile Include="Dependencies\UKCalendar.cs" />
     <Compile Include="Interfaces\AbstractFactory.cs" />
     <Compile Include="Interfaces\ICalendar.cs" />

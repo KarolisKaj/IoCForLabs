@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoFacAttributes.cs" />
-    <Compile Include="AutoFacConfig.cs" />
     <Compile Include="PriorityMeta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
